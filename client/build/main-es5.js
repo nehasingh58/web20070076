@@ -165,8 +165,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           this.apiService.getData().subscribe(function (res) {
             if ((res === null || res === void 0 ? void 0 : res.status) == 200) {
-              console.log(res);
-              _this.temp = res.temperature;
+              _this.temp = res.temparature;
               _this.humid = res.humidity;
             }
           });
@@ -202,7 +201,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "h4");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Temperature");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Temperature (in C)");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
