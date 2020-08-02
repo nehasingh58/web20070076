@@ -1,0 +1,25 @@
+<html>
+  <body>
+    <h1>Raspberry Pi Azure IoT Online Simulator Readings</h1>
+
+    <div>
+        Temperature<h3>33</h1>
+        <h2>Humidity 33 C</h2>
+    </div>
+
+  </body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+        $.ajax({
+          type: "GET",
+          url: "/api/v1/getData",
+          success: function (data) {
+            console.log(data);
+          },
+        });
+    });
+  </script>
+</html>

@@ -1,0 +1,38 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+html {
+  height: 100%;
+}
+
+#root {
+  flex: 1;
+}
+
+#headerData {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#centerData {
+  display: flex;
+  justify-content: center;
+}
+
+.qrDiv section section {
+  position: initial !important;
+}
+.carousel .slide img {
+  width: 100%;
+  vertical-align: top;
+  border: 0;
+  height: -webkit-fill-available;
+}
+
+.carousel.carousel-slider {
+  height: 250px;
+}
