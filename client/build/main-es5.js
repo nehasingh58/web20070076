@@ -57,63 +57,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-    /* harmony import */
-
-
-    var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _angular_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
-    /* harmony import */
-
-
-    var _sensor_data_sensor_data_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! ./sensor-data/sensor-data.component */
-    "./src/app/sensor-data/sensor-data.component.ts");
 
     var routes = [{
       path: '',
-      redirectTo: 'home',
+      redirectTo: '/devices',
       pathMatch: 'full'
-    }, {
-      path: 'home',
-      component: _sensor_data_sensor_data_component__WEBPACK_IMPORTED_MODULE_2__["SensorDataComponent"]
     }];
 
-    var AppRoutingModule = function AppRoutingModule() {
-      _classCallCheck(this, AppRoutingModule);
-    };
-
-    AppRoutingModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({
-      type: AppRoutingModule
+    var AppRoutingModule = _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(routes, {
+      useHash: true,
+      enableTracing: false
     });
-    AppRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({
-      factory: function AppRoutingModule_Factory(t) {
-        return new (t || AppRoutingModule)();
-      },
-      imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
-    });
-
-    (function () {
-      (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](AppRoutingModule, {
-        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]],
-        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
-      });
-    })();
-    /*@__PURE__*/
-
-
-    (function () {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](AppRoutingModule, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
-        args: [{
-          imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(routes)],
-          exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
-        }]
-      }], null, null);
-    })();
     /***/
 
   },
@@ -146,98 +103,32 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _service_data_fetch_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! ./service/data-fetch.service */
-    "./src/app/service/data-fetch.service.ts");
+    var _devices_device_device_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ./devices/device/device.component */
+    "./src/app/devices/device/device.component.ts");
 
-    var AppComponent = /*#__PURE__*/function () {
-      function AppComponent(apiService) {
-        _classCallCheck(this, AppComponent);
+    var AppComponent = function AppComponent() {
+      _classCallCheck(this, AppComponent);
 
-        this.apiService = apiService;
-        this.title = 'IOT-Azure-Training';
-      }
-
-      _createClass(AppComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {
-          var _this = this;
-
-          this.apiService.getData().subscribe(function (res) {
-            if ((res === null || res === void 0 ? void 0 : res.status) == 200) {
-              console.log(res);
-              _this.temp = res.temperature;
-              _this.humid = res.humidity;
-            }
-          });
-        }
-      }]);
-
-      return AppComponent;
-    }();
+      this.title = 'training';
+    };
 
     AppComponent.ɵfac = function AppComponent_Factory(t) {
-      return new (t || AppComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_service_data_fetch_service__WEBPACK_IMPORTED_MODULE_1__["DataFetchService"]));
+      return new (t || AppComponent)();
     };
 
     AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: AppComponent,
       selectors: [["app-root"]],
-      decls: 12,
-      vars: 2,
-      consts: [[1, "container-body"], [1, "container"], [1, "content"], [1, "content", "m-l"]],
+      decls: 1,
+      vars: 0,
       template: function AppComponent_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "h3");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Raspberry Pi - IOT Hub - Live Data");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 1);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "h4");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Temperature");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 3);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "h4");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Temperature");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        }
-
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx.temp, " ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx.humid, " ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-device");
         }
       },
-      styles: [".container-body[_ngcontent-%COMP%] {\n  background-color: #86ccba;\n  position: absolute;\n  margin: -8px;\n  width: 95%;\n  height: 95%;\n  overflow: hidden;\n  padding: 20px;\n}\n.container-body[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  margin-bottom: 30px;\n  text-align: center;\n}\n.container-body[_ngcontent-%COMP%]   .container[_ngcontent-%COMP%] {\n  width: 95%;\n  height: 100px;\n  background-color: #c0fae9;\n  border: 1px solid #9895c7;\n  border-radius: 5px;\n  padding: 20px;\n}\n.container-body[_ngcontent-%COMP%]   .container[_ngcontent-%COMP%]   .content[_ngcontent-%COMP%] {\n  width: 42%;\n  display: inline-block;\n  position: absolute;\n  height: 15%;\n  background-color: yellow;\n  text-align: center;\n}\n.container-body[_ngcontent-%COMP%]   .container[_ngcontent-%COMP%]   .m-l[_ngcontent-%COMP%] {\n  margin-left: 48%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXFVzZXJzXFxORTIwMDcwMDc2XFxORUhBXFxMZWFybmluZ1xcSU9ULUF6dXJlXFxzZXJ2ZXJcXGNsaWVudFxcSU9ULUF6dXJlLVRyYWluaW5nL3NyY1xcYXBwXFxhcHAuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0VBQ0EsVUFBQTtFQUNBLFdBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7QUNDRjtBREFFO0VBQ0UsbUJBQUE7RUFDQSxrQkFBQTtBQ0VKO0FEQUU7RUFDRSxVQUFBO0VBQ0EsYUFBQTtFQUNBLHlCQUFBO0VBQ0EseUJBQUE7RUFDQSxrQkFBQTtFQUNBLGFBQUE7QUNFSjtBRERJO0VBQ0UsVUFBQTtFQUNBLHFCQUFBO0VBQ0Esa0JBQUE7RUFDQSxXQUFBO0VBQ0Esd0JBQUE7RUFDQSxrQkFBQTtBQ0dOO0FEREk7RUFDRSxnQkFBQTtBQ0dOIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbnRhaW5lci1ib2R5IHtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjODZjY2JhO1xyXG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICBtYXJnaW46IC04cHg7XHJcbiAgd2lkdGg6IDk1JTtcclxuICBoZWlnaHQ6IDk1JTtcclxuICBvdmVyZmxvdzogaGlkZGVuO1xyXG4gIHBhZGRpbmc6IDIwcHg7XHJcbiAgaDMge1xyXG4gICAgbWFyZ2luLWJvdHRvbTogMzBweDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICB9XHJcbiAgLmNvbnRhaW5lciB7XHJcbiAgICB3aWR0aDogOTUlO1xyXG4gICAgaGVpZ2h0OiAxMDBweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICNjMGZhZTk7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCByZ2IoMTUyLCAxNDksIDE5OSk7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgICBwYWRkaW5nOiAyMHB4O1xyXG4gICAgLmNvbnRlbnQge1xyXG4gICAgICB3aWR0aDogNDIlO1xyXG4gICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgaGVpZ2h0OiAxNSU7XHJcbiAgICAgIGJhY2tncm91bmQtY29sb3I6IHllbGxvdztcclxuICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgfVxyXG4gICAgLm0tbCB7XHJcbiAgICAgIG1hcmdpbi1sZWZ0OiA0OCU7XHJcbiAgICB9XHJcbiAgfVxyXG59XHJcbiIsIi5jb250YWluZXItYm9keSB7XG4gIGJhY2tncm91bmQtY29sb3I6ICM4NmNjYmE7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgbWFyZ2luOiAtOHB4O1xuICB3aWR0aDogOTUlO1xuICBoZWlnaHQ6IDk1JTtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgcGFkZGluZzogMjBweDtcbn1cbi5jb250YWluZXItYm9keSBoMyB7XG4gIG1hcmdpbi1ib3R0b206IDMwcHg7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cbi5jb250YWluZXItYm9keSAuY29udGFpbmVyIHtcbiAgd2lkdGg6IDk1JTtcbiAgaGVpZ2h0OiAxMDBweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2MwZmFlOTtcbiAgYm9yZGVyOiAxcHggc29saWQgIzk4OTVjNztcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBwYWRkaW5nOiAyMHB4O1xufVxuLmNvbnRhaW5lci1ib2R5IC5jb250YWluZXIgLmNvbnRlbnQge1xuICB3aWR0aDogNDIlO1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgaGVpZ2h0OiAxNSU7XG4gIGJhY2tncm91bmQtY29sb3I6IHllbGxvdztcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuLmNvbnRhaW5lci1ib2R5IC5jb250YWluZXIgLm0tbCB7XG4gIG1hcmdpbi1sZWZ0OiA0OCU7XG59Il19 */"]
+      directives: [_devices_device_device_component__WEBPACK_IMPORTED_MODULE_1__["DeviceComponent"]],
+      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJ9 */"]
     });
     /*@__PURE__*/
 
@@ -249,11 +140,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           templateUrl: './app.component.html',
           styleUrls: ['./app.component.scss']
         }]
-      }], function () {
-        return [{
-          type: _service_data_fetch_service__WEBPACK_IMPORTED_MODULE_1__["DataFetchService"]
-        }];
-      }, null);
+      }], null, null);
     })();
     /***/
 
@@ -265,13 +152,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     !*** ./src/app/app.module.ts ***!
     \*******************************/
 
-  /*! exports provided: AppModule */
+  /*! exports provided: HttpLoaderFactory, AppModule */
 
   /***/
   function srcAppAppModuleTs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "HttpLoaderFactory", function () {
+      return HttpLoaderFactory;
+    });
     /* harmony export (binding) */
 
 
@@ -305,9 +198,37 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _devices_device_device_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ./devices/device/device.component */
+    "./src/app/devices/device/device.component.ts");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @angular/common/http */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! @ngx-translate/http-loader */
+    "./node_modules/@ngx-translate/http-loader/__ivy_ngcc__/fesm2015/ngx-translate-http-loader.js");
+    /* harmony import */
+
+
+    var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! @ngx-translate/core */
+    "./node_modules/@ngx-translate/core/__ivy_ngcc__/fesm2015/ngx-translate-core.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+
+    function HttpLoaderFactory(http) {
+      return new _ngx_translate_http_loader__WEBPACK_IMPORTED_MODULE_6__["TranslateHttpLoader"](http);
+    }
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
@@ -322,13 +243,19 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         return new (t || AppModule)();
       },
       providers: [],
-      imports: [[_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"]]]
+      imports: [[_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__["TranslateModule"].forRoot({
+        loader: {
+          provide: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__["TranslateLoader"],
+          useFactory: HttpLoaderFactory,
+          deps: [_angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClient"]]
+        }
+      })]]
     });
 
     (function () {
       (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, {
-        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]],
-        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"]]
+        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _devices_device_device_component__WEBPACK_IMPORTED_MODULE_4__["DeviceComponent"]],
+        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__["TranslateModule"]]
       });
     })();
     /*@__PURE__*/
@@ -338,8 +265,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
-          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]],
-          imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"]],
+          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _devices_device_device_component__WEBPACK_IMPORTED_MODULE_4__["DeviceComponent"]],
+          imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"], _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__["TranslateModule"].forRoot({
+            loader: {
+              provide: _ngx_translate_core__WEBPACK_IMPORTED_MODULE_7__["TranslateLoader"],
+              useFactory: HttpLoaderFactory,
+              deps: [_angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClient"]]
+            }
+          })],
           providers: [],
           bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
         }]
@@ -350,113 +283,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
-  "./src/app/sensor-data/sensor-data.component.ts":
-  /*!******************************************************!*\
-    !*** ./src/app/sensor-data/sensor-data.component.ts ***!
-    \******************************************************/
+  "./src/app/devices/device-details.service.ts":
+  /*!***************************************************!*\
+    !*** ./src/app/devices/device-details.service.ts ***!
+    \***************************************************/
 
-  /*! exports provided: SensorDataComponent */
+  /*! exports provided: DeviceDetailsService */
 
   /***/
-  function srcAppSensorDataSensorDataComponentTs(module, __webpack_exports__, __webpack_require__) {
+  function srcAppDevicesDeviceDetailsServiceTs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
     /* harmony export (binding) */
 
 
-    __webpack_require__.d(__webpack_exports__, "SensorDataComponent", function () {
-      return SensorDataComponent;
-    });
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-    /* harmony import */
-
-
-    var _service_data_fetch_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! ../service/data-fetch.service */
-    "./src/app/service/data-fetch.service.ts");
-
-    var SensorDataComponent = /*#__PURE__*/function () {
-      function SensorDataComponent(apiService) {
-        _classCallCheck(this, SensorDataComponent);
-
-        this.apiService = apiService;
-      }
-
-      _createClass(SensorDataComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {// this.apiService.getData().subscribe((res) => {
-          //   console.log(res);
-          // });
-        }
-      }]);
-
-      return SensorDataComponent;
-    }();
-
-    SensorDataComponent.ɵfac = function SensorDataComponent_Factory(t) {
-      return new (t || SensorDataComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_service_data_fetch_service__WEBPACK_IMPORTED_MODULE_1__["DataFetchService"]));
-    };
-
-    SensorDataComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-      type: SensorDataComponent,
-      selectors: [["app-sensor-data"]],
-      decls: 2,
-      vars: 0,
-      template: function SensorDataComponent_Template(rf, ctx) {
-        if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "sensor-data works!");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        }
-      },
-      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NlbnNvci1kYXRhL3NlbnNvci1kYXRhLmNvbXBvbmVudC5zY3NzIn0= */"]
-    });
-    /*@__PURE__*/
-
-    (function () {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](SensorDataComponent, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
-        args: [{
-          selector: 'app-sensor-data',
-          templateUrl: './sensor-data.component.html',
-          styleUrls: ['./sensor-data.component.scss']
-        }]
-      }], function () {
-        return [{
-          type: _service_data_fetch_service__WEBPACK_IMPORTED_MODULE_1__["DataFetchService"]
-        }];
-      }, null);
-    })();
-    /***/
-
-  },
-
-  /***/
-  "./src/app/service/data-fetch.service.ts":
-  /*!***********************************************!*\
-    !*** ./src/app/service/data-fetch.service.ts ***!
-    \***********************************************/
-
-  /*! exports provided: DataFetchService */
-
-  /***/
-  function srcAppServiceDataFetchServiceTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "DataFetchService", function () {
-      return DataFetchService;
+    __webpack_require__.d(__webpack_exports__, "DeviceDetailsService", function () {
+      return DeviceDetailsService;
     });
     /* harmony import */
 
@@ -471,37 +314,44 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! @angular/common/http */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 
-    var DataFetchService = /*#__PURE__*/function () {
-      function DataFetchService(httpClient) {
-        _classCallCheck(this, DataFetchService);
+    var DeviceDetailsService = /*#__PURE__*/function () {
+      function DeviceDetailsService(httpClient) {
+        _classCallCheck(this, DeviceDetailsService);
 
         this.httpClient = httpClient;
-        this.apiURL = 'https://web20070076.azurewebsites.net/api/v1/getdata';
+        this.tokenVal = sessionStorage.getItem('adal.idtoken');
+        this.header = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+          'Content-Type': 'application/json',
+          Authorization: 'Bearer ' + this.tokenVal,
+          'Access-Control-Allow-Origin': '*'
+        });
       }
 
-      _createClass(DataFetchService, [{
-        key: "getData",
-        value: function getData() {
-          return this.httpClient.get(this.apiURL);
+      _createClass(DeviceDetailsService, [{
+        key: "getDevicesData",
+        value: function getDevicesData() {
+          return this.httpClient.get('https://webapp-20017238.azurewebsites.net/api/v1/getdata', {
+            headers: this.header
+          });
         }
       }]);
 
-      return DataFetchService;
+      return DeviceDetailsService;
     }();
 
-    DataFetchService.ɵfac = function DataFetchService_Factory(t) {
-      return new (t || DataFetchService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
+    DeviceDetailsService.ɵfac = function DeviceDetailsService_Factory(t) {
+      return new (t || DeviceDetailsService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
     };
 
-    DataFetchService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
-      token: DataFetchService,
-      factory: DataFetchService.ɵfac,
+    DeviceDetailsService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+      token: DeviceDetailsService,
+      factory: DeviceDetailsService.ɵfac,
       providedIn: 'root'
     });
     /*@__PURE__*/
 
     (function () {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DataFetchService, [{
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DeviceDetailsService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
         args: [{
           providedIn: 'root'
@@ -509,6 +359,122 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }], function () {
         return [{
           type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+        }];
+      }, null);
+    })();
+    /***/
+
+  },
+
+  /***/
+  "./src/app/devices/device/device.component.ts":
+  /*!****************************************************!*\
+    !*** ./src/app/devices/device/device.component.ts ***!
+    \****************************************************/
+
+  /*! exports provided: DeviceComponent */
+
+  /***/
+  function srcAppDevicesDeviceDeviceComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "DeviceComponent", function () {
+      return DeviceComponent;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _device_details_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ../device-details.service */
+    "./src/app/devices/device-details.service.ts");
+    /* harmony import */
+
+
+    var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+
+    var DeviceComponent = /*#__PURE__*/function () {
+      function DeviceComponent(deviceDetailsService) {
+        _classCallCheck(this, DeviceComponent);
+
+        this.deviceDetailsService = deviceDetailsService;
+      }
+
+      _createClass(DeviceComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          this.getDevicesData();
+        }
+      }, {
+        key: "getDevicesData",
+        value: function getDevicesData() {
+          var _this = this;
+
+          this.deviceDetailsService.getDevicesData().subscribe(function (res) {
+            alert(res);
+            _this.data = res;
+          });
+        }
+      }]);
+
+      return DeviceComponent;
+    }();
+
+    DeviceComponent.ɵfac = function DeviceComponent_Factory(t) {
+      return new (t || DeviceComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_device_details_service__WEBPACK_IMPORTED_MODULE_1__["DeviceDetailsService"]));
+    };
+
+    DeviceComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+      type: DeviceComponent,
+      selectors: [["app-device"]],
+      decls: 4,
+      vars: 3,
+      template: function DeviceComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h3");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Device details");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](3, "json");
+        }
+
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("\n", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](3, 1, ctx.data), "");
+        }
+      },
+      pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["JsonPipe"]],
+      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2RldmljZXMvZGV2aWNlL2RldmljZS5jb21wb25lbnQuc2NzcyJ9 */"]
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DeviceComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+          selector: 'app-device',
+          templateUrl: './device.component.html',
+          styleUrls: ['./device.component.scss']
+        }]
+      }], function () {
+        return [{
+          type: _device_details_service__WEBPACK_IMPORTED_MODULE_1__["DeviceDetailsService"]
         }];
       }, null);
     })();
@@ -614,7 +580,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   /***/
   function _(module, exports, __webpack_require__) {
     module.exports = __webpack_require__(
-    /*! C:\Users\NE20070076\NEHA\Learning\IOT-Azure\server\client\IOT-Azure-Training\src\main.ts */
+    /*! C:\Users\SN20017238\Desktop\IOT-training\client\training\src\main.ts */
     "./src/main.ts");
     /***/
   }
