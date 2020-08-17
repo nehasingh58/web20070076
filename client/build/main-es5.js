@@ -164,10 +164,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           var _this = this;
 
           this.apiService.getData().subscribe(function (res) {
-            if ((res === null || res === void 0 ? void 0 : res.status) == 200) {
+            if ((res === null || res === void 0 ? void 0 : res.status) === 200) {
               _this.temp = res.temparature;
               _this.humid = res.humidity;
             }
+          });
+          this.apiService.getHistoryData().subscribe(function (res) {
+            console.log("RES = ", res); // if (res?.status === 200) {
+            //   this.temp = res.temparature;
+            //   this.humid = res.humidity;
+            // }
           });
         }
       }]);
@@ -476,12 +482,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         this.httpClient = httpClient;
         this.apiURL = 'https://web20070076.azurewebsites.net/api/v1/getdata';
+        this.apiURLHistory = 'https://462manitest.azurewebsites.net/api/v1/history?from=2020-08-16T07:33:28.000Z&to=2020-08-17T05:33:28.000Z';
       }
 
       _createClass(DataFetchService, [{
         key: "getData",
         value: function getData() {
           return this.httpClient.get(this.apiURL);
+        }
+      }, {
+        key: "getHistoryData",
+        value: function getHistoryData() {
+          return this.httpClient.get(this.apiURLHistory);
         }
       }]);
 

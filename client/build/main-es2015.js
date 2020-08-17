@@ -84,10 +84,17 @@ class AppComponent {
     }
     ngOnInit() {
         this.apiService.getData().subscribe((res) => {
-            if ((res === null || res === void 0 ? void 0 : res.status) == 200) {
+            if ((res === null || res === void 0 ? void 0 : res.status) === 200) {
                 this.temp = res.temparature;
                 this.humid = res.humidity;
             }
+        });
+        this.apiService.getHistoryData().subscribe((res) => {
+            console.log("RES = ", res);
+            // if (res?.status === 200) {
+            //   this.temp = res.temparature;
+            //   this.humid = res.humidity;
+            // }
         });
     }
 }
@@ -231,9 +238,13 @@ class DataFetchService {
     constructor(httpClient) {
         this.httpClient = httpClient;
         this.apiURL = 'https://web20070076.azurewebsites.net/api/v1/getdata';
+        this.apiURLHistory = 'https://462manitest.azurewebsites.net/api/v1/history?from=2020-08-16T07:33:28.000Z&to=2020-08-17T05:33:28.000Z';
     }
     getData() {
         return this.httpClient.get(this.apiURL);
+    }
+    getHistoryData() {
+        return this.httpClient.get(this.apiURLHistory);
     }
 }
 DataFetchService.ɵfac = function DataFetchService_Factory(t) { return new (t || DataFetchService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])); };
