@@ -482,7 +482,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         this.httpClient = httpClient;
         this.apiURL = 'https://web20070076.azurewebsites.net/api/v1/getdata';
-        this.apiURLHistory = 'https://web20070076.azurewebsites.net/api/v1/history?from=2020-07-31T20:15:28.000Z&to=2020-08-2T17:25:28.000Z';
+        this.apiURLHistory = 'https://web20070076.azurewebsites.net/api/v1/history?from=2020-08-16T12:33:28.000Z&to=2020-08-17T09:33:28.000Z';
       }
 
       _createClass(DataFetchService, [{
