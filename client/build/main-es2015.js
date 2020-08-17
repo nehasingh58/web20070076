@@ -238,7 +238,7 @@ class DataFetchService {
     constructor(httpClient) {
         this.httpClient = httpClient;
         this.apiURL = 'https://web20070076.azurewebsites.net/api/v1/getdata';
-        this.apiURLHistory = 'https://462manitest.azurewebsites.net/api/v1/history?from=2020-08-16T07:33:28.000Z&to=2020-08-17T05:33:28.000Z';
+        this.apiURLHistory = 'https://web20070076.azurewebsites.net/api/v1/history?from=2020-08-16T07:33:28.000Z&to=2020-08-17T05:33:28.000Z';
     }
     getData() {
         return this.httpClient.get(this.apiURL);
