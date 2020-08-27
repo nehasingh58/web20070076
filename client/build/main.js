@@ -778,12 +778,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var DataFetchService = /** @class */ (function () {
-    // 'https://web20070076.azurewebsites.net/api/v1/history';
     // ?from=2020-08-16T12:33:28.000Z&to=2020-08-17T09:33:28.000Z
     function DataFetchService(httpClient) {
         this.httpClient = httpClient;
         this.apiURL = 'https://web20070076.azurewebsites.net/api/v1/getdata';
-        this.apiURLHistory = 'http://localhost:3008/api/v1/history';
+        this.apiURLHistory = 'https://web20070076.azurewebsites.net/api/v1/history';
     }
     DataFetchService.prototype.getData = function () {
         return this.httpClient.get(this.apiURL);
