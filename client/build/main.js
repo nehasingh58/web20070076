@@ -447,7 +447,7 @@ var AppComponent = /** @class */ (function () {
             }
         });
         var param = {
-            from: '2020-08-16T12:33:28.000Z',
+            from: '2020-08-17T09:30:28.000Z',
             until: '2020-08-17T09:33:28.000Z',
         };
         this.apiService.getHistoryData(param).subscribe(function (res) {
