@@ -481,7 +481,7 @@ var AppComponent = /** @class */ (function () {
                     return d.label;
                 },
                 y: function (d) {
-                    return d.value;
+                    return d.y;
                 },
                 showValues: true,
                 valueFormat: function (d) {
